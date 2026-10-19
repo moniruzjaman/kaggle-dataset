@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        .result {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .confidence {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1565c0;
+        }
+        .home-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .home-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Detection Result</h1>
+        <div class="result">
+            <p>Detected Disease: <strong>{{ result.class }}</strong></p>
+            <p class="confidence">Confidence: {{ result.confidence }}</p>
+        </div>
+        <a href="/" class="home-btn">Try Another Image</a>
+    </div>
+</body>
+</html>

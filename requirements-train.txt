@@ -1,0 +1,14 @@
+# Only needed to train or export a model with train_model.py.
+# Recommended: keep them out of the app runtime venv, see the training section
+# in README.md -
+#     uv venv --python 3.12 .venv-train
+#     uv pip install --python .venv-train\Scripts\python.exe -r requirements-train.txt
+# The pretrained model used by the app (see download_pretrained_model.py) runs on
+# the lightweight packages in requirements.txt and needs none of these.
+numpy
+tensorflow
+scikit-learn
+matplotlib
+
+# Needed only by train_model.py --export-onnx
+tf2onnx

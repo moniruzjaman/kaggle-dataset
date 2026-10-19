@@ -1,0 +1,18 @@
+# Large dataset files (too big for GitHub; download from Kaggle instead)
+kaggle dataset.zip
+PlantVillage/
+plant-village/
+
+# Runtime / user uploads
+uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-train/
+
+# Editor / tooling
+.vscode/
+.kilo/
+enter

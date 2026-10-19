@@ -1,0 +1,11 @@
+# Only needed to rebuild the smaller models with quantize_model.py.
+# The app itself keeps running on requirements.txt (onnxruntime + flask + numpy
+# + pillow); the converted weights are plain ONNX files that need no extra
+# package at inference time.
+onnx
+onnxruntime
+numpy
+
+# Only for the optional float16 build (--mode fp16), which halves the file size
+# but measured about 15x slower on CPU.
+onnxconverter-common

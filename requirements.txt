@@ -1,0 +1,7 @@
+# Lightweight runtime only: Flask web app + pretrained ONNX model inference.
+# Validated with flask==3.1.3, numpy==2.5.3, onnxruntime==1.30.0, pillow==12.3.0
+# Re-training the model from scratch needs requirements-train.txt instead.
+onnxruntime
+flask
+numpy
+pillow
