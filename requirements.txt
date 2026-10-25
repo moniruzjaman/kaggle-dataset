@@ -3,5 +3,6 @@
 # Re-training the model from scratch needs requirements-train.txt instead.
 onnxruntime
 flask
+gunicorn
 numpy
 pillow
