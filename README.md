@@ -43,6 +43,28 @@ has to be installed - inference runs on ONNX Runtime on the CPU.
    Then open `http://localhost:5000`, select a leaf image and click
    "Detect Disease".
 
+## Deployed version
+
+A live instance is running on Render:
+
+[https://plant-disease-detection.onrender.com](https://plant-disease-detection.onrender.com)
+
+*(Replace the link above with your own Render URL after deploying — see the steps below.)*
+
+### Deploy to Render
+
+1. Push this repo to GitHub.
+2. In the Render dashboard, create a **New Web Service** and connect the repository.
+3. Render will auto-detect `render.yaml` (Python runtime, `gunicorn app:app` start command).
+   The build command already installs the runtime and downloads the pretrained model.
+4. Deploy — Render runs the build command, which installs the runtime and downloads
+   the pretrained model (6.2 MB) from Hugging Face before the service starts.
+
+### Test the deployed link
+
+Open the Render URL, upload a leaf image, and click **"Detect Disease"**. The result
+page shows the predicted class and confidence percentage, matching the local CLI output.
+
 ## Files
 
 | File | Purpose |

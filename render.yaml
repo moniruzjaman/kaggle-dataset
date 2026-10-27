@@ -2,7 +2,7 @@ services:
   - type: web
     name: plant-disease-detection
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python download_pretrained_model.py
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
