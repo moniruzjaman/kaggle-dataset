@@ -47,9 +47,7 @@ has to be installed - inference runs on ONNX Runtime on the CPU.
 
 A live instance is running on Render:
 
-[https://plant-disease-detection.onrender.com](https://plant-disease-detection.onrender.com)
-
-*(Replace the link above with your own Render URL after deploying — see the steps below.)*
+[https://kaggle-dataset.onrender.com/](https://kaggle-dataset.onrender.com/)
 
 ### Deploy to Render
 
