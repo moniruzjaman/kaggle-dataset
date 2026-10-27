@@ -66,7 +66,7 @@ page shows the predicted class and confidence percentage, matching the local CLI
 ## Files
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `requirements.txt` | Lightweight runtime: Flask + ONNX Runtime inference |
 | `requirements-train.txt` | Extra packages, only needed to re-train from scratch |
 | `requirements-quantize.txt` | Extra packages, only needed to rebuild the smaller models |
@@ -85,7 +85,7 @@ page shows the predicted class and confidence percentage, matching the local CLI
 ## Pretrained model
 
 | Item | Value |
-|---|---|
+| --- | --- |
 | Source | Hugging Face `imaflower/plantvillage-mobilenetv3` (MIT licence) |
 | Architecture | MobileNetV3-Small, 1.53M parameters, ImageNet-pretrained backbone |
 | Download size | 6.16 MB (`model.onnx` + `model.onnx.data` + `class_names.json`) |
@@ -133,7 +133,7 @@ Measured on this machine with `--per-class 15` (225 images) and an interleaved
 latency benchmark:
 
 | Build | Size | Accuracy | Latency | Command |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | float32 (shipped) | 6.16 MB | 99.56% | 8.24 ms | `download_pretrained_model.py` |
 | **classifier int8 (`--mode gemm`, default)** | **4.35 MB** | **99.56%** | 8.11 ms | `quantize_model.py` |
 | full int8, weights-only (`--mode dynamic`) | 1.69 MB | 5.33% | 22 ms | rejected |
@@ -161,7 +161,7 @@ quantization. `train_model.py --per-class 300 --img-size 128 --epochs 10
 `models\plantvillage_trained\` (MobileNetV3-Small alpha 0.75 at 128x128):
 
 | Model | Size | Accuracy | Latency (median) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | shipped float32, 224x224 | 6.15 MB | 99.56% | 6.4-7.0 ms |
 | `models\plantvillage_trained`, 128x128 | **2.29 MB** | 91.00% (273/300) / 88.85% val | 5-11 ms |
 | `models\crop_leaf_diseases_vit.onnx` | 21.27 MB | not usable (13 classes) | 120-140 ms |
@@ -267,7 +267,7 @@ with the same interface as the shipped model, so `predict.py`, `app.py` and
 `evaluate_model.py` need no change:
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | Input | `input`, NCHW float32, RGB, ImageNet-normalised (same as `predict.py`) |
 | Output | `logits`, raw scores, no softmax |
 | Labels | sorted class-folder names, identical ordering to `class_names.json` |
